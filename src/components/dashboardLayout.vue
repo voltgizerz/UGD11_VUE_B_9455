@@ -14,7 +14,7 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title  @click="$router.push({name:item.name})">{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -43,7 +43,11 @@ export default {
   data() {
     return {
       drawer: null,
-      items: [{ title: "User Controller", icon: "mdi-human-male" }]
+      items: [{ 
+        title: "User Controller", icon: "mdi-human-male",name:'UserController'
+        },{
+          title: "Kendaraan Controller", icon: "mdi-car"
+        }]
     };
   }
 };
