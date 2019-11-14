@@ -9,7 +9,7 @@ function loadView(view) {
 }
 
 const routes = [
-  {
+  { 
     path: '/',
     component: DashboardLayout,
     children: [
@@ -20,9 +20,9 @@ const routes = [
       },
       {
         name: 'KendaraanController',
-        path: '/kendaraan',
+        path: 'kendaraan',
         component: loadView('kendaraanController')
-      },
+      }
     ]
   }
 ];

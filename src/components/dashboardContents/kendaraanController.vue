@@ -20,7 +20,7 @@
             <v-text-field v-model="keyword" append-icon="mdi-search" label="Search" hide-details></v-text-field>
           </v-flex>
         </v-layout>
-        <v-data-table :headers="headers" :items="users" :search="keyword" :loading="load">
+        <v-data-table :headers="headers" :items="kendaraans" :search="keyword" :loading="load">
           <template v-slot:body="{ items }">
             <tbody>
               <tr v-for="(item,index) in items" :key="item.id">
@@ -119,7 +119,7 @@ export default {
           value: null
         }
       ],
-      users: [],
+      kendaraans: [],
       snackbar: false,
       color: null,
       text: "",
@@ -139,7 +139,7 @@ export default {
     getData() {
       var uri = this.$apiUrl + "/kendaraan";
       this.$http.get(uri).then(response => {
-        this.users = response.data.message;
+        this.kendaraans = response.data.message;
       });
     },
     sendData() {
